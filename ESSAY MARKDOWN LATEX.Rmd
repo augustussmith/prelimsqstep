@@ -2,6 +2,7 @@
 output: 
   pdf_document: 
     keep_tex: yes
+    keep_md: true
 ---
 
 ## Appendix C: R Code
