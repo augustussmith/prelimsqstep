@@ -1,0 +1,1510 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper, top=0.6in}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
+
+
+%SetFonts
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Augustus Smith}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+
+\graphicspath{ {./images/} }
+
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%SetFonts
+
+
+\title{Does Consensus Democracy Lead To Improved Economics Outcomes?}
+\author{Augustus Smith}
+\date{\vspace{-2em}} 
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+\paragraph{}
+The differing impact of consensus and majoritarian democracies upon economic outcomes is disputed theoretically and empirically. Lijphart in \textit{Patterns of Democracy} (2012) demonstrates through multivariate regression that consensus democracy leads to improved, or similar, outcomes relative to majoritarian democracies.
+	
+\paragraph{}
+Lijphart’s analysis is, however, subject to methodological flaws. His executive-parties dimension is imperfect, containing arbitrary values for executive dominance, and including the tangentially related corporatism.
+
+\paragraph{}
+I correct the flaws in Lijphart’s analysis, developing a new measure of executive dominance for a superior executive-parties dimension, before analysing its impact on investment, research and development spending, and a measure of inflation volatility I construct. These variables are chosen since they represent indicators where, if consensus democracies were to differ according to theory, it would be observed. Finally, I expand the democracies analysed by extending Lijphart’s selection criteria to 2019. With these refinements I find no relationship between consensus democracy and improved economic outcomes, concluding that democracy type has no impact on relevant economic outcomes.
+
+\section{Definitions}
+
+\paragraph{}
+Lijphart differentiates between consensus and majoritarian democracies based upon how much of the population they represent – as many citizens as possible versus a bare plurality. In line with Lijphart’s own analysis I use the executive-parties dimension of operationalising consensus democracies. Consensus democracies are defined by five main characteristics: broad coalition cabinets, weaker executives, multiparty systems, proportional representation and corporatist interest groups\footnote{These are methodologically defined by oversized cabinets which surpass the minimum required parliamentary majority, executive dominance as measured by mean cabinet duration, effective number of parties using the Laakso and Taagepera (1979) method, electoral disproportionality with the Gallagher index, and an index of interest group pluralism from a combination of Siaroff (1999) and Lijphart’s own estimates.}  (Lijphart, 2012).
+
+\paragraph{}
+To operationalise ‘economic outcomes’ I will initially measure the impact of consensus democracy on CPI inflation and unemployment\footnote{Both variables will be drawn from the World Bank data which Lijphart supplies.}  before considering inflation volatility, investment, and research and development spending.
+
+\section{Theoretical Argument}
+
+\paragraph{}
+Lijphart (2012) fails to offer a theoretical answer to the question, instead focusing on his empirical findings. By viewing consensus democracies as oversized coalitions with dispersed power, however, we can theorise as to why they might lead to improved economic outcomes. Consensus democracies, by including more parties in the legislature and executive, have a greater number of veto players. More veto players lead to greater policy stability because the consent of all is required for change, limiting rash and self-interested decision-making (Tsebelis, 2002). 
+
+\paragraph{}
+This has two key effects. The need for wider consensus leads to executives governing in the general interest (Crepaz, 1996), reducing rent-seeking. It also introduces greater certainty; with a greater number of veto players greater stability should be present and stability enhances the quality of macroeconomic management (Finer, 1975). 
+
+\paragraph{}
+Uncertainty over future government policy leads to firms delaying irreversible investments in case regulation or taxation policy changes (Canes-Wrone and Park, 2014). This delay is lessened in consensus democracy because of the greater degree of policy continuity which is demanded. The correlation between greater constraints on government and higher levels of growth is borne out in the literature (e.g. Henisz, 2002). If consensus democracies do lead to greater levels of certainty and long-term economic decision-making, and thereby create improved outcomes, this should be an observable phenomenon in investment and R\&D spending.
+
+\paragraph{}
+There is a reason, however, that Lijphart states he is arguing against conventional wisdom – there are compelling counterarguments to be made. The greater number of veto players “creates a demand for consensus, [but] it does not ensure the supply.” (Anderson, 2001, p. 345) – instead of consensual policy-making that favours everyone more veto players may cause gridlock; this phenomenon is observed in US government shutdowns.
+
+\paragraph{}
+This gridlock may not be problematic if the economy is experiencing favourable economic conditions. If, however, there is an exogenous shock to the economy – such as an inflation shock – then consensus democracies may be unable to respond as promptly as majoritarian democracies due to the wide diffusion of veto points. If so, crises will be prolonged and ultimately more damaging. This may be borne out in more volatile economies where lack of consensus between veto players makes it difficult to maintain stable inflation.
+
+\paragraph{}
+Given the competing theories the answer to the question must be resolved empirically. The theoretical argument provides three variables to focus upon where more consensual institutions might make an impact: inflation volatility, investment and R\&D spending. First, however, I rectify the flaws in Lijphart’s analysis.
+
+\section{Empirical Analysis}
+
+\subsection{Lijphart's Analysis}
+
+\paragraph{}
+Lijphart (2012) regresses the executive-parties dimension against unemployment and CPI inflation, controlling for HDI and population size (logged). I replicate this and follow him in excluding Israel and Uruguay as inflation outliers.
+
+
+\begin{table}[!htbp] \centering 
+  \caption{Lijphart's Analysis} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-10pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+ & CPI (1981-2009) & Unemployment (1981-2009) \\ 
+\hline \\[-1.8ex] 
+ Executive-Parties Dimension (1981-2010) & $-$1.480$^{**}$ & $-$1.794$^{*}$ \\ 
+  & (0.607) & (0.929) \\ 
+  & & \\ 
+ HDI 2010 & $-$22.557$^{***}$ & $-$11.290 \\ 
+  & (6.057) & (15.227) \\ 
+  & & \\ 
+ Population 2009 (logged, 1000s) & $-$0.800$^{**}$ & $-$0.468 \\ 
+  & (0.356) & (0.676) \\ 
+  & & \\ 
+ Constant & 32.348$^{***}$ & 22.792$^{**}$ \\ 
+  & (6.010) & (10.518) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 26 & 20 \\ 
+R$^{2}$ & 0.592 & 0.369 \\ 
+Adjusted R$^{2}$ & 0.537 & 0.251 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+\paragraph{}
+Lijphart’s analysis shows that while the relationship between more consensual democracy and unemployment is only significant at the 10\% level, the relationship with inflation is significant and substantive enough that an average consensus democracy has three percentage points lower inflation than a majoritarian democracy\footnote{Given that the executive-parties dimension has a range of almost four standard deviations, the average consensus and average majoritarian democracies can be seen as being ‘two’ points apart on the executive-parties dimension (Lijphart, 2012, p. 262).} (Lijphart, 2012).
+
+\subsection{Refining the Executive-Parties Dimension and Addressing Outliers}
+
+\paragraph{}
+Despite Lijphart’s findings appearing to confirm that consensus democracies lead to lower inflation, there are problems with his construction of the executive-parties dimension. The inclusion of interest group pluralism is contested (Giuliani, 2016; Anderson, 2001). Despite empirical correlation with the executive-parties dimension the two are not theoretically linked but rather opposed; corporatism involves extra-parliamentary, centralised decision-making whereas consensus democracies exhibit the opposite approach (Keman and Pennings, 1995). I therefore exclude it from the executive-parties dimension.
+
+\paragraph{}
+The executive dominance measure also has problems – the values for presidential systems are assigned arbitrarily (Lijphart, 2012) since they have fixed cabinet durations. One possible replacement of cabinet duration is \textit{the number of governing parties} (Roller, 2005) – another measure of veto players constraining executive action. Since this can be calculated for presidential and parliamentary democracies, it is a superior measure. I calculate this as a mean value over the entire period, adding 1 for minority governments and presidential systems where the executive and president are from opposed parties.\footnote{  This data is calculated from the Party Government Data Set (2011), Swank (2018), and Wikipedia; results can be found in Appendix A.}
+
+\paragraph{}
+I reconstruct the executive-parties dimension without interest group pluralism and with this new variable.\footnote{  In Patterns of Democracy, Lijphart (2012, p. 243) states that higher values on the executive-parties dimension reflect more majoritarian states. This is at odds with the dataset where negative values reflect majoritarianism. I have chosen to follow the dataset’s approach and made majoritarian states negative on the executive-parties dimension; the attached code should reflect this.} The reconstructed dimension is closely correlated with Lijphart’s, r = 0.96, and has a Cronbach’s alpha of 0.89 – essentially the same as Lijphart’s original dimension where \begin{math}\alpha  = 0.88. \end{math} It therefore still represents consensus democracy accurately and has very high internal consistency.
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{figure1}
+\end{figure}
+
+\paragraph{} 
+As well as arbitrarily assigning values for executive dominance, Lijphart’s treatment of outliers is not empirically driven. I test both unemployment and CPI inflation using quartiles to determine empirically which outliers need to be removed.
+
+\paragraph{}
+With regards to CPI inflation, I find that, alongside Israel and Uruguay, Costa Rica and Jamaica are also outliers.
+
+\begin{figure}[h]
+\includegraphics[scale=0.75]{boxplot1}
+\includegraphics[scale=0.75]{boxplot2}
+\end{figure}
+
+\paragraph{}
+Inspecting unemployment shows that there are also outliers which Lijphart failed to identify here – Spain and Jamaica. I exclude them from the analysis and run the regression with a more accurate measure of consensus democracy and the outliers removed. 
+
+\paragraph{}
+There is now no statistically significant relationship between consensus democracies and unemployment. The relationship with CPI is still significant at the 5\% level, but the effect is lessened; a standard deviation increase in consensus democracy results in lower inflation of 1.05 percentage points rather than 1.48.
+
+\begin{table}[!htbp] \centering 
+  \caption{ Refining Lijphart's Analysis} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-10pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+ & CPI (1981-2009) & Unemployment (1981-2009) \\ 
+\hline \\[-1.8ex] 
+ Updated Executive-Parties Dimension (1981-2010) & $-$1.054$^{**}$ & $-$0.269 \\ 
+  & (0.440) & (0.826) \\ 
+  & & \\ 
+ HDI 2010 & $-$14.940$^{***}$ & $-$9.608 \\ 
+  & (3.813) & (13.838) \\ 
+  & & \\ 
+ Population 2009 (logged, 1000s) & $-$0.399$^{*}$ & $-$0.378 \\ 
+  & (0.220) & (0.563) \\ 
+  & & \\ 
+ Constant & 21.424$^{***}$ & 19.486$^{*}$ \\ 
+  & (3.964) & (10.416) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 24 & 18 \\ 
+R$^{2}$ & 0.586 & 0.125 \\ 
+Adjusted R$^{2}$ & 0.523 & $-$0.062 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+
+\paragraph{}
+Inflation and unemployment, however, do not properly represent those outcomes which consensus democracy might be expected to improve. I therefore expand the indicators analysed to focus on inflation volatility, investment and R\&D spending, drawing the variables from my theoretical argument.
+
+\subsection{Alternative Economic Indicators}
+
+\paragraph{}
+Lijphart’s justification for his choice of economic indicators is that they represent “traditional measures of macroeconomic management” (Lijphart, 2012, p. 256). I expand Lijphart’s analysis by considering variables which might be affected by the greater number of veto players present in consensus democracies.
+
+\paragraph{}
+Lijphart’s use of inflation is flawed since lower inflation is not an improved economic outcome. Not only is deflation extremely damaging but it is low volatility, not inflation, which is important (Elder, 2004; Byrne and Davis, 2004). I therefore follow Bowdler and Malik (2017) in computing a new measure of inflation volatility  based on standard deviation over five-year periods. Since consensus democracies should be more liable to volatility and less capable of handling shocks, inflation volatility\footnote{Using Data from International Financial Statistics [distributed by the IMF], my notes on the operationalisation and calculation of inflation volatility can be found in Appendix B.} should be higher in consensus than majoritarian democracies.
+
+\paragraph{}
+Given the role of openness as a potential confounder (Lo, Wong, and Granato, 2007), I control for economies’ openness to international trade\footnote{Data is from the World Bank, I operationalise ‘economic openness’ as trade as a percentage of a country’s GDP.} .  Consensus democracy results in no change to inflation volatility. The poor model fit even when including openness, \begin{math} R^2 = 0.367\end{math}, shows that it is other factors which determine inflation volatility. The non-impact of consensus democracy suggests that the form of democracy is irrelevant to economic outcomes.
+
+\begin{table}[!htbp] \centering 
+  \caption{Inflation Volatility} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-15pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{CPI Inflation Volatility (1980-2010)} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Updated Executive-Parties Dimension & $-$0.015 & 0.001 \\ 
+  & (0.047) & (0.046) \\ 
+  & & \\ 
+ HDI 2010 & $-$1.568$^{***}$ & $-$1.769$^{***}$ \\ 
+  & (0.456) & (0.450) \\ 
+  & & \\ 
+ Population 2009 (logged, 1000s) & $-$0.029 & $-$0.067$^{**}$ \\ 
+  & (0.020) & (0.026) \\ 
+  & & \\ 
+ Economic Openness (1980-2010) &  & $-$0.002$^{**}$ \\ 
+  &  & (0.001) \\ 
+  & & \\ 
+ Constant & 2.213$^{***}$ & 2.912$^{***}$ \\ 
+  & (0.415) & (0.515) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 35 & 34 \\ 
+R$^{2}$ & 0.359 & 0.444 \\ 
+Adjusted R$^{2}$ & 0.297 & 0.367 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\paragraph{}
+I examine the impact of consensus democracy on R\&D spending and investment as proportions of GDP, controlling for the real interest rate as a confounder to investment.\footnote{  All data here is taken from the World Bank.} If consensus democracy did improve economic outcomes through greater certainty and long-term decision-making due to more veto players, it would be demonstrated there.
+
+\paragraph{}
+When considering investment, I remove the outliers of Barbados, Botswana, Korea, and Uruguay.\footnote{  Calculated using quartiles.}  The impact of all factors is statistically insignificant; democracy type has no impact on investment. The particularly poor model fit, with an adjusted \begin{math} R^2 = -0.109 \end{math}, is especially noteworthy and suggests that democracy type is of no use in explaining variation in investment across countries. 
+
+\begin{table}[!htbp] \centering 
+  \caption{Gross Capital Formation (1980-2010)} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-15pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Investment as \% of GDP (1980-2010)} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Updated Executive-Parties Dimension & 0.271 & 0.703 \\ 
+  & (0.548) & (0.769) \\ 
+  & & \\ 
+ HDI 2010 & $-$6.619 & $-$9.793 \\ 
+  & (5.409) & (7.492) \\ 
+  & & \\ 
+ Population 2009 (logged, 100s) & 0.005 & $-$0.095 \\ 
+  & (0.230) & (0.308) \\ 
+  & & \\ 
+ Mean Real Interest Rate (1980-2010) &  & $-$0.322 \\ 
+  &  & (0.414) \\ 
+  & & \\ 
+ Constant & 29.117$^{***}$ & 34.215$^{***}$ \\ 
+  & (5.197) & (8.228) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 31 & 19 \\ 
+R$^{2}$ & 0.055 & 0.137 \\ 
+Adjusted R$^{2}$ & $-$0.050 & $-$0.109 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+\begin{table}[!htbp] \centering 
+  \caption{R\&D Spending (1980-2010)} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-15pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Research and Development Spending as \% of GDP (1980-2010) \\ 
+\hline \\[-1.8ex] 
+ Updated Executive-Parties Dimension & 0.479$^{***}$ \\ 
+  & (0.171) \\ 
+  & \\ 
+ HDI 2010 & 5.734$^{***}$ \\ 
+  & (1.587) \\ 
+  & \\ 
+ Population 2009 (logged, 1000s) & 0.126$^{*}$ \\ 
+  & (0.074) \\ 
+  & \\ 
+ Constant & $-$4.347$^{***}$ \\ 
+  & (1.479) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 34 \\ 
+R$^{2}$ & 0.525 \\ 
+Adjusted R$^{2}$ & 0.478 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\paragraph{}
+Regressing the new executive-parties dimension against R\&D spending, however, shows a relationship which is statistically significant at the 1\% level. An increase in consensus democracy by one standard deviation results in R\&D spending increasing by 0.48\% of GDP. The average consensus democracy has R\&D spending nearly 1\% of GDP higher than the average majoritarian democracy; this is substantively significant given mean R\&D spending, 1.62\% of GDP, and its importance in driving economic growth (Miloslavich, 2017).
+
+
+\paragraph{}
+These findings partially fit with the theoretical argument – the longer time horizon of consensus democracies explains greater R\&D spending – but the lack of a relationship with investment challenges the same premise. It is therefore unclear whether R\&D spending is an exception or being influenced by unidentified confounders and is not genuinely related to democracy type. 
+
+\paragraph{}
+Given this finding, I include more democracies to see if the same relationships hold with a larger sample.
+
+\subsection{Expanding the Number of Democracies}
+
+\paragraph{}
+Lijphart’s selection of cases is not up to date, consisting primarily of well-established democracies. Both Fortin (2008) and Croissant and Shächter (2009) struggle to reproduce an effective executive-parties dimension in post-Communist states and Asia respectively, raising the possibility that my earlier findings did not reflect a trend amongst all democracies, but only a small subset. The passage of time also gives me the opportunity to include new democracies and thereby increase the number of observations.
+
+\paragraph{}
+I follow Lijphart’s case selection by selecting only democracies with a population of over 250,000 and twenty years of continuous rating of ‘Free’ by Freedom House as of 2019. The new democracies are Belize, Bulgaria, Cape Verde, Chile, Cyprus, Estonia, Latvia, Lithuania, Mongolia, Namibia, Panama, Poland, Romania, Slovenia, South Africa, Taiwan, and Vanuatu.
+
+\paragraph{}
+I operationalise the executive-parties dimension in the same manner as I did previously, excluding interest group pluralism and using the number of governing parties to represent executive dominance\footnote{  Data is taken from the Quality of Government Standard Dataset (2020), African Elections Database (2012), Gallagher Electoral Disproportionality Data (2015), Party Government Dataset (2011), Caribbean Elections (2020), and Wikipedia. The code appendix contains more precise details.}. This executive-parties dimension, once standardised, has a Cronbach’s alpha of 0.76. This is less internally consistent than both mine and Lijphart’s dimension for the original 36 democracies, potentially supporting the conclusion that consensus democracy is not an appropriate measure for all democracies, but is still high enough for analysis to be relevant.
+
+\paragraph{}
+Using the same dependent variables, controls, and sources of data as previously\footnote{Population data is from the World Bank, while HDI is from the UN Human Development Report (2019). I exclude the outliers of Korea, Uruguay, Cape Verde, and Mongolia for investment, and Bulgaria and Mongolia for inflation volatility.}, analysing all fifty-three democracies together shows that no relationship is statistically significant at the 5\% level. There is no change in significance with regards to CPI volatility and investment spending, while the relationship between consensus democracy and mean R\&D spending is now only statistically significant at the 10\% level – not enough to conclude that such a relationship does exist. This indicates that the prior relationship may have been a function of case selection, or that the concept of consensus democracy is not well-suited to all democracies. The impact of consensus democracy on R\&D spending has also fallen from a standard deviation increase leading to an increase of 0.48\% of GDP to only 0.275\%.
+
+
+\begin{table}[!htbp] \centering
+  \caption{Fifty-Three Democracies' Inflation Volatility} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-15pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{CPI Inflation Volatility (1980-2010)} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Executive-Parties Dimension & 0.090 & 0.101 \\ 
+  & (0.075) & (0.077) \\ 
+  & & \\ 
+ HDI 2010 & $-$1.124$^{*}$ & $-$1.153$^{*}$ \\ 
+  & (0.630) & (0.636) \\ 
+  & & \\ 
+ Population 2009 (logged, 1000s) & $-$0.043 & $-$0.075$^{*}$ \\ 
+  & (0.031) & (0.042) \\ 
+  & & \\ 
+ Economic Openness (1980-2010) &  & $-$0.002 \\ 
+  &  & (0.002) \\ 
+  & & \\ 
+ Constant & 2.073$^{***}$ & 2.549$^{***}$ \\ 
+  & (0.545) & (0.695) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 48 & 47 \\ 
+R$^{2}$ & 0.121 & 0.147 \\ 
+Adjusted R$^{2}$ & 0.061 & 0.066 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\begin{table}[!Htbp] \centering
+  \caption{Fifty-Three Democracies' Gross Capital Formation} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-20pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Investment as \% of GDP (1980-2010)} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Executive-Parties Dimension & 0.639 & 0.965 \\ 
+  & (0.576) & (0.788) \\ 
+  & & \\ 
+ HDI 2010 & $-$4.387 & $-$7.817 \\ 
+  & (4.947) & (6.481) \\ 
+  & & \\ 
+ Population 2009 (logged, 100s) & $-$0.098 & $-$0.068 \\ 
+  & (0.233) & (0.312) \\ 
+  & & \\ 
+ Mean Real Interest Rate (1980-2010) &  & $-$0.212 \\ 
+  &  & (0.293) \\ 
+  & & \\ 
+ Constant & 28.293$^{***}$ & 31.675$^{***}$ \\ 
+  & (4.366) & (6.710) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 47 & 29 \\ 
+R$^{2}$ & 0.037 & 0.094 \\ 
+Adjusted R$^{2}$ & $-$0.030 & $-$0.057 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+\begin{table}[!htbp] \centering 
+  \caption{Fifty-Three Democracies' R\&D Spending} 
+  \label{} 
+\small 
+\begin{tabular}{@{\extracolsep{-15pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Research and Development Spending as \% of GDP (1980-2010) \\ 
+\hline \\[-1.8ex] 
+ Executive-Parties Dimension & 0.275$^{*}$ \\ 
+  & (0.158) \\ 
+  & \\ 
+ HDI 2010 & 6.007$^{***}$ \\ 
+  & (1.401) \\ 
+  & \\ 
+ Population 2009 (logged, 1000s) & 0.145$^{**}$ \\ 
+  & (0.069) \\ 
+  & \\ 
+ Constant & $-$4.929$^{***}$ \\ 
+  & (1.291) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 47 \\ 
+R$^{2}$ & 0.454 \\ 
+Adjusted R$^{2}$ & 0.416 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\newpage
+
+\section{Conclusion}
+
+\paragraph{}
+My analysis indicates that consensus democracy does not lead to improved economic outcomes. Once the flaws in Lijphart’s analysis are addressed, appropriate economic indicators are chosen, and the number of cases is expanded to include all those that fit the criteria in 2019, no relationship exists. The lack of any meaningful relationship suggests that the form of a democracy has little to no impact on economic outcomes, challenging Lijphart’s conclusion.
+
+\paragraph{}
+\begin{flushleft}
+\textbf{\textsc{Word Count:}} 2028
+\end{flushleft}
+
+\newpage
+
+\section*{References Used:}
+\begin{flushleft}
+African Elections Database (2012). [Accessed: http://africanelections.tripod.com/index.html].
+\end{flushleft}
+\begin{flushleft}
+Anderson, L. (2001). “The Implications of Institutional Design for Macroeconomic Performance: Reassessing the Claims of Consensus Democracy.” \textit{Comparative Political Studies}, 34(4), p. 429-452.
+\end{flushleft}
+\begin{flushleft}
+Bowdler, C. and Malik, A. (2017). “Openness and inflation volatility: Panel data evidence.” \textit{North American Journal of Economics and Finance.} 41, p. 57-69.
+\end{flushleft}
+
+\begin{flushleft}
+
+Byrne, J. P. and Davis, E. P. (2004). “Permanent and temporary inflation uncertainty and investment in the Unites States”. \textit{Economic Letters}, 85(2), p. 271-277.
+\end{flushleft}
+
+\begin{flushleft}
+
+Canes-Wrone, B. and Park, J-K. (2014). “Elections, Uncertainty, and Irreversible Investment.” \textit{British Journal of Political Science.} 44(1), p. 83-106.
+\end{flushleft}
+
+\begin{flushleft}
+
+Chhibber, P. K. and Verma, R. (2018). \textit{Ideology and identity: the changing party systems of India.} Oxford University Press.
+\end{flushleft}
+
+\begin{flushleft}
+
+Crepaz, M. (1996). “Consensus Versus Majoritarian Democracy. Political Institutions and their Impact on Macroeconomic Performance and Industrial Disputes.” \textit{Comparative Political Studies.} 29(1), p. 4-26.
+\end{flushleft}
+
+\begin{flushleft}
+
+Croissant, A. and Shächter, T. (2009). “Democracy structures in Asia: findings, determinants, and consequences.” \textit{Zeitschrift für Politikwissenschaft.} 19(3), p. 387-420.
+\end{flushleft}
+
+\begin{flushleft}
+
+Elder, J. (2004). “Another Perspective on the Effects of Inflation Uncertainty.” \textit{Journal of Money, Credit, and Banking.} 36(5), p. 911-928.
+\end{flushleft}
+
+\begin{flushleft}
+
+Finer, S. E. (1975). \textit{Adversary Politics and Electoral Reform.} Anthony Wigram.
+\end{flushleft}
+
+\begin{flushleft}
+
+Fortin, J. (2008). “Patterns of Democracy? Counterevidence from Nineteen Post-Communist Countries.” \textit{Zeitschrift fur Vergleichende Politikwissenschaft.} 2(2), p. 198-220.
+\end{flushleft}
+
+\begin{flushleft}
+
+Freedom House (2020). Freedom in the World 1973-2020. [Accessed: https://freedomhouse.org/report/freedom-world]
+\end{flushleft}
+
+\begin{flushleft}
+
+Gandrud, C. (2015). “Gallagher Electoral Disproportionality Data: 121 Countries, 1945-2014.” [Accessed: http://christophergandrud.github.io/Disproportionality\_Data/]
+\end{flushleft}
+
+\begin{flushleft}
+
+Giuliani, M. (2016). “Patterns of democracy reconsidered: The ambiguous relationship between corporatism and consensualism.” \textit{European Journal of Political Research.} 55, p. 22-42.
+\end{flushleft}
+
+\begin{flushleft}
+
+Henisz, W. J. (2000). “The Institutional Environment for Economic Growth.” \textit{Economics and Politics.} 12(1), p. 1-31.
+\end{flushleft}
+
+\begin{flushleft}
+
+Hlavac, M. (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables. R package version 5.2.2. [https://CRAN.R-project.org/package=stargazer]
+\end{flushleft}
+
+\begin{flushleft}
+
+International Monetary Fund. (2020). International Financial Statistics. [Accessed: http://data.imf.org/?sk=4C514D48-B6BA-49ED-8AB9-52B0C1A0179B].
+\end{flushleft}
+
+\begin{flushleft}
+
+Keman, H. and Pennings, P. (1995). “Managing Political and Societal Conflict in Democracies: Do Consensus and Corporatism Matter?” \textit{British Journal of Political Science,} 25(2), p. 271-281.
+\end{flushleft}
+
+\begin{flushleft}
+
+KnowledgeWalk Institute. (2020). Caribbean Elections. [Accessed: http://www.caribbeanelections.com/default.asp]
+\end{flushleft}
+
+\begin{flushleft}
+
+Laakso, M. and Taagepera, R. (1979). “’Effective’ Number of Parties: A Measure with Application to Western Europe.” \textit{Comparative Political Studies,} 12(1), p. 3-27.
+\end{flushleft}
+
+\begin{flushleft}
+
+Lijphart, A. (2012). \textit{Patterns of Democracy: Government Forms and Performance in Thirty-Six Countries.} Yale University Press.
+\end{flushleft}
+
+\begin{flushleft}
+
+Lo, M., Wong, M. and Granato, J. (2007). “Testing monetary policy intentions in open economies.” \textit{Southern Economic Journal,} p. 225-241.
+\end{flushleft}
+
+\begin{flushleft}
+
+Miloslavich, M. (2017.) “R\&D Based Growth Models with Transitional Dynamics: Evidence from OECD Countries.” \textit{Duke University Dissertation.}
+\end{flushleft}
+
+\begin{flushleft}
+
+Roller, E. (2005). \textit{The Performance of Democracies: Political Institutions and Public Policy.} Oxford University Press.
+\end{flushleft}
+
+\begin{flushleft}
+
+Siaroff, A. (1999). “Corporatism in 24 Industrial Democracies: Meaning and Measurement.” \textit{European Journal of Political Research.} 36(2), p. 175-205.
+\end{flushleft}
+
+\begin{flushleft}
+
+Swank, D. (2018). Comparative Political Parties Dataset: Electoral, Legislative, and Government Strength of Political Parties by Ideological Group in 21 Capitalist Democracies, 1950-2015. Marquette University. 
+\end{flushleft}
+
+\begin{flushleft}
+
+Teorell, Jan, Stefan Dahlberg, Sören Holmberg, Bo Rothstein, Natalia Alvarado Pachon and Sofia Axelsson. (2020). The Quality of Government Standard Dataset. University of Gothenburg: The Quality of Government Institute.
+\end{flushleft}
+
+\begin{flushleft}
+
+The Comparative Study of Electoral Systems. (2015). CSES MODULE 3 FULL RELEASE. https://doi:10.7804/cses.module3.2015-12-15/ 
+\end{flushleft}
+
+\begin{flushleft}
+
+Tsebelis, G. (2002). \textit{Veto Players: how political institutions work.} Princeton University Press.
+\end{flushleft}
+
+\begin{flushleft}
+
+United Nations. (2019). Human Development Report. [Accessed: http://hdr.undp.org/en/content/human-development-report-2019-readers-guide]
+\end{flushleft}
+
+\begin{flushleft}
+
+Wolderndorp, J., Keman, H., Budge, I. (2011). Party Government in 40 Democracies 1945-2008. Alternately – ‘Party Government Data Set’.
+\end{flushleft}
+
+\begin{flushleft}
+
+World Bank. (2020). World Bank Open Data. [Accessed: https://data.worldbank.org/]
+
+\end{flushleft}
+
+\section*{Background Readings:}
+
+\begin{flushleft}
+Bormann, N-C. (2010). “Patterns of Democracy and Its Critics.” \textit{Center for International and Comparative Studies.}
+\end{flushleft}
+
+\newpage
+
+\section*{Appendix A: Mean Number of Governing Parties}
+
+\begin{flushleft}
+Using data from the Party Government Data Set (2011), Swank (2018) and Wikipedia I code the mean for the number of governing parties from 1980-2010 for the 36 countries of Lijphart’s dataset to replace the ‘executive dominance’ measure. I consider the number of parties composing a government formally, excluding ‘confidence and supply’ measures or informal alliances and including only parties in coalition.
+\end{flushleft}
+
+\begin{flushleft}
+I increase the variable value by 1 in two cases: where there is a minority parliamentary government, and when the president and prime minister are from opposed parties in presidential democracies. This reflects the increased number of relevant and legitimate veto players.
+\end{flushleft}
+
+\begin{flushleft}
+The data can be accessed here: https://www.filehosting.org/file/details/860097/Number\%20of\%20Governing\%20Parties.xlsx
+\end{flushleft}
+
+\begin{flushleft}
+I do the same for the new democracies, also noting the government type. The sources are the Party Government Data Set (2011), African Elections Database (2012), Caribbean Elections (2020) and Wikipedia.
+\end{flushleft}
+
+\begin{flushleft}
+The data can be accessed here:
+https://www.filehosting.org/file/details/862074/New\%20Democracies\%20Data.xlsx 
+\end{flushleft}
+
+\newpage
+
+\section*{Appendix B: Economic Outcomes}
+\underline{Inflation Volatility:} 
+
+\begin{flushleft}
+I follow the method outlined in Bowdler and Malik (2017) of computing inflation volatility over five-year periods with the formula: \begin{math} \ln⁡(1+\sigma) \end{math}. I take data from International Financial Statistics (2020) for quarterly changes in CPI to measure volatility. The addition of 1 avoids the problem of values close to zero. I then calculate a mean over the period per democracy. There are no outliers in the first analysis of only 36 democracies. \\
+\end{flushleft}
+
+\begin{flushleft}
+To control for economic openness, I use data from the World Bank (2020) for each country’s level of trade as a percentage of GDP before taking a mean from 1980-2010. \\
+\end{flushleft}
+
+\begin{flushleft}
+The data for inflation volatility can be accessed here for all 53 democracies:\\
+ https://www.filehosting.org/file/details/862072/Inflation.xlsx  \\
+ \end{flushleft}
+ 
+ \begin{flushleft}
+ \underline{Investment:} \\
+ \end{flushleft}
+ \begin{flushleft}
+
+ I use World Bank data (2020) to calculate each country’s mean level of investment from 1980-2010. There are a number of outliers which I identify with quartiles. They are Barbados, Botswana, Korea, and Uruguay. I remove them before performing the regression.
+ 
+ \end{flushleft}
+ 
+ \begin{figure}[h]
+ \includegraphics{boxplot3}
+ \end{figure}
+ 
+ \begin{flushleft}
+ When taking the 53 democracies altogether the outliers are Bulgaria and Mongolia for inflation volatility, and Korea, Uruguay, Cape Verde and Mongolia for investment.
+ \end{flushleft}
+
+
+
+
+
+\newpage
+
+\hypertarget{appendix-c-r-code}{%
+\section*{Appendix C: R Code}\label{appendix-c-r-code}}
+
+Attached is all of the R code written for the essay and analysis. Not
+all of it is included in the essay, for example the coding of mean party
+divergence, but I have included everything since it informed all of my
+work.
+
+At each step it should be clear where any additional data is sourced.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Loading packages}
+\KeywordTok{library}\NormalTok{(stargazer)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(repmis)}
+\KeywordTok{library}\NormalTok{(readxl)}
+
+\CommentTok{#Importing datasets}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"http://andy.egge.rs/data/L.csv"}\NormalTok{)}
+\NormalTok{qog_data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"http://www.qogdata.pol.gu.se/data/qog_std_ts_jan20.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{disproportionality_data <-}\StringTok{ }\NormalTok{repmis}\OperatorTok{::}\KeywordTok{source_data}\NormalTok{(}\DataTypeTok{url =} \StringTok{"http://bit.ly/Ss6zDO"}\NormalTok{)}
+\NormalTok{newdemocracy_dimension_data <-}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(}\StringTok{"/Users/gussmith/Desktop/notes/Politics/Political Analysis/Essay/Data/New Democracies Data.xlsx"}\NormalTok{)}
+
+\CommentTok{#Remove scientific numbers}
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{scipen=}\DecValTok{999}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+I began by replicating Lijphart's initial analysis from Patterns of
+Democracy.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Lijphart excludes Israel and Uruguay from inflation as outliers.}
+\NormalTok{data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{18}\NormalTok{] }\CommentTok{#Israel is in the dataset}
+\NormalTok{data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{18}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Israel has now been excluded}
+\NormalTok{data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{35}\NormalTok{] }\CommentTok{#Uruguay returns the value 'NA'; no need to exclude.}
+
+\CommentTok{#Regression of Exec-Parties Dimension on CPI}
+\NormalTok{multiregression1 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009} \OperatorTok{~}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{exec_parties_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010} 
+                       \OperatorTok{+}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+\CommentTok{#Regression of Exec-Parties Dimension on Unemployment}
+\NormalTok{multiregression2 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009} \OperatorTok{~}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{exec_parties_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }
+\StringTok{                         }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+
+\CommentTok{#Building a regression table.}
+\KeywordTok{stargazer}\NormalTok{(multiregression1, multiregression2, }
+          \DataTypeTok{title=}\StringTok{"Lijphart's Analysis"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Executive-Parties Dimension (1981-2010)"}\NormalTok{, }\StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 1000s)"}\NormalTok{), }
+          \DataTypeTok{column.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"CPI (1981-2009)"}\NormalTok{, }\StringTok{"Unemployment (1981-2009)"}\NormalTok{), }
+          \DataTypeTok{model.numbers =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{dep.var.labels.include =} \OtherTok{FALSE}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{, }\DataTypeTok{out=}\StringTok{"regressiontable4.tex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+I reconstructed a new Executive-Parties dimension, removing interest
+group pluralism and re-defining executive dominance with a non-arbitrary
+measure so that presidential systems could be properly included.
+
+As I outline in the code, I follow the example of the dataset and not
+the book in coding more majoritarian democracies as having negative
+values on the executive-parties dimension.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Fixing executive dominance; want to create a variable: 'number of governing parties'.}
+\CommentTok{#Source: Detailed in Appendix A.}
+\NormalTok{meangoverningparties <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{1.6}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{1.9}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{4.5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.2}\NormalTok{, }\FloatTok{1.6}\NormalTok{, }\FloatTok{3.5}\NormalTok{, }\FloatTok{3.9}\NormalTok{,}
+                          \FloatTok{2.6}\NormalTok{, }\FloatTok{2.2}\NormalTok{, }\FloatTok{1.2}\NormalTok{, }\FloatTok{2.4}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{2.7}\NormalTok{, }\FloatTok{5.4}\NormalTok{, }\FloatTok{5.1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{2.1}\NormalTok{, }\FloatTok{1.8}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{,}
+                          \FloatTok{2.2}\NormalTok{, }\FloatTok{2.7}\NormalTok{, }\FloatTok{2.9}\NormalTok{, }\FloatTok{1.8}\NormalTok{, }\FloatTok{1.4}\NormalTok{, }\FloatTok{1.9}\NormalTok{, }\FloatTok{2.7}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{1.2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.2}\NormalTok{, }\FloatTok{1.7}\NormalTok{)}
+
+\CommentTok{#Lijphart (2012, p. 243) states that higher values are more majoritarian states, }
+\CommentTok{#Here, more majoritarian states have negative values on the e-p dimension.}
+\CommentTok{#I have followed the dataset's example and therefore reversed minimal winning cabinets }
+\CommentTok{#and disproportionality.}
+
+\NormalTok{effparties2 <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(data}\OperatorTok{$}\NormalTok{eff_num_parl_parties_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+\NormalTok{minimalcabinets2 <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(}\OperatorTok{-}\NormalTok{data}\OperatorTok{$}\NormalTok{pct_minimal_winning_one_party_cabinet_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+\NormalTok{execdominance2 <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(meangoverningparties)}
+\NormalTok{disproportionality2 <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(}\OperatorTok{-}\NormalTok{data}\OperatorTok{$}\NormalTok{index_of_disproportionality_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+
+\NormalTok{newepdimension <-}\StringTok{ }\NormalTok{((effparties2 }\OperatorTok{+}\StringTok{ }\NormalTok{minimalcabinets2 }\OperatorTok{+}
+\StringTok{                      }\NormalTok{execdominance2 }\OperatorTok{+}\StringTok{ }\NormalTok{disproportionality2) }\OperatorTok{/}\StringTok{ }\DecValTok{4}\NormalTok{)}
+
+\CommentTok{#We can test to see if this closely aligns with Lijphart's dimension.}
+\KeywordTok{cor.test}\NormalTok{(data}\OperatorTok{$}\NormalTok{exec_parties_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{, newepdimension)}
+\CommentTok{#This gives us that r = 0.96}
+
+\CommentTok{#I also test for Cronbach's alpha on the new EP dimension}
+\NormalTok{epconstituentsdataframe <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(effparties2, minimalcabinets2,}
+\NormalTok{                                 execdominance2, disproportionality2)}
+\CommentTok{#Testing for Cronbach's alpha}
+\NormalTok{psych}\OperatorTok{::}\KeywordTok{alpha}\NormalTok{(epconstituentsdataframe) }\CommentTok{#This returns that alpha = 0.89}
+
+\CommentTok{#Testing for the alpha of Lijphart's E-P dimension}
+\NormalTok{lijphartepdataframe <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(data}\OperatorTok{$}\NormalTok{eff_num_parl_parties_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+\NormalTok{                             data}\OperatorTok{$}\NormalTok{index_of_disproportionality_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{, }
+\NormalTok{                             data}\OperatorTok{$}\NormalTok{pct_minimal_winning_one_party_cabinet_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+\NormalTok{                             data}\OperatorTok{$}\NormalTok{index_of_exec_dominance_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+\NormalTok{                             data}\OperatorTok{$}\NormalTok{index_of_interest_group_pluralism_}\DecValTok{1981}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+\NormalTok{psych}\OperatorTok{::}\KeywordTok{alpha}\NormalTok{(lijphartepdataframe, }\DataTypeTok{check.keys =} \OtherTok{TRUE}\NormalTok{) }\CommentTok{#Alpha = 0.88}
+\end{Highlighting}
+\end{Shaded}
+
+I created a mean party divergence variable, thinking that the difference
+in policy position between parties might impact upon economic variables.
+In the end it only reduced the adjusted R-squared of my regressions, so
+I did not include it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Then - want to set up party divergence variable. }
+\CommentTok{#Data for 29 countries, inputting mean divergence over the period. Not included in essay.}
+\NormalTok{meanpartydivergence_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{1.457}\NormalTok{, }\FloatTok{3.284}\NormalTok{, }\FloatTok{1.890}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{2.173}\NormalTok{, }\DecValTok{0}\NormalTok{, }\FloatTok{2.234}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{4.020}\NormalTok{, }\FloatTok{1.977}\NormalTok{,}
+                                   \FloatTok{2.404}\NormalTok{, }\FloatTok{2.963}\NormalTok{, }\FloatTok{2.983}\NormalTok{, }\FloatTok{2.966}\NormalTok{, }\FloatTok{3.963}\NormalTok{, }\FloatTok{1.235}\NormalTok{, }\FloatTok{2.434}\NormalTok{, }\FloatTok{2.737}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{2.169}\NormalTok{,}
+                                   \FloatTok{1.187}\NormalTok{, }\FloatTok{1.394}\NormalTok{, }\FloatTok{0.677}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{1.22}\NormalTok{, }\FloatTok{2.872}\NormalTok{, }\FloatTok{3.372}\NormalTok{, }\FloatTok{1.546}\NormalTok{, }\FloatTok{2.013}\NormalTok{, }\FloatTok{4.574}\NormalTok{,}
+                                   \FloatTok{5.515}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{3.404}\NormalTok{, }\FloatTok{5.475}\NormalTok{, }\FloatTok{2.869}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Given Lijphart's arbitrary inclusion of outliers, I re-ran quartile
+tests for outliers in the inflation and unemployment data from
+1981-2010.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Want to test for CPI first.}
+\KeywordTok{boxplot}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Figure 2: CPI Outliers"}\NormalTok{,}
+        \DataTypeTok{xlab =} \StringTok{"CPI Inflation (1981-2009)"}\NormalTok{,}
+        \DataTypeTok{horizontal =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Now - need to calculate which countries are the exception}
+\KeywordTok{quantile}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\CommentTok{#IQR = 4.21075, Q3 + 1.5IQR = 13.89987}
+\CommentTok{#Now, need to identify which are the values over 13.9.}
+\KeywordTok{plot}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{labels =}\NormalTok{ data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{cex =} \FloatTok{0.7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#So - Costa Rica and Jamaica are outliers with regards to inflation.}
+\CommentTok{#So is Israel, but I have already excluded it.}
+
+\CommentTok{#Second variable - unemployment}
+\KeywordTok{boxplot}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Figure 3: Unemployment Outliers"}\NormalTok{,}
+        \DataTypeTok{xlab =} \StringTok{"Unemployment % (1981-2009)"}\NormalTok{, }\DataTypeTok{horizontal =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#2 outliers again.}
+\KeywordTok{quantile}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\CommentTok{#IQR = 3.59525, Q3 + 1.5IQR = 15.07737}
+\KeywordTok{plot}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{, data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{labels =}\NormalTok{ data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{cex =} \FloatTok{0.7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#The states are Spain and Jamaica with unemployment.}
+\CommentTok{#Inflation - excluded Israel and Uruguay already.}
+\NormalTok{data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{9}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Costa Rica}
+\NormalTok{data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{20}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Jamaica}
+\NormalTok{data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{30}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Spain}
+\NormalTok{data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009}\NormalTok{[}\DecValTok{20}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Jamaica}
+\end{Highlighting}
+\end{Shaded}
+
+I re-ran the regressions on CPI inflation and unemployment with the new
+executive-parties dimension and outliers removed. The regressions
+controlling for party divergence are included.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#with old controls of HDI and population logged}
+\NormalTok{multiregression3 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}
+\StringTok{                         }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+
+\NormalTok{multiregression4 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}
+\StringTok{                         }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+
+\CommentTok{#Now - produce a table for this first set of multiregression analysis.}
+\KeywordTok{stargazer}\NormalTok{(multiregression3, multiregression4, }\DataTypeTok{title=}\StringTok{"Refining Lijphart's Analysis"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Updated Executive-Parties Dimension (1981-2010)"}\NormalTok{,}
+                               \StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 1000s)"}\NormalTok{), }
+          \DataTypeTok{column.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"CPI (1981-2009)"}\NormalTok{, }\StringTok{"Unemployment (1981-2009)"}\NormalTok{),}
+          \DataTypeTok{model.numbers =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{dep.var.labels.include =} \OtherTok{FALSE}\NormalTok{,}
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{, }\DataTypeTok{out=}\StringTok{"regressiontable5.tex"}\NormalTok{)}
+
+\CommentTok{#Next, we want to add the party divergence variable as an extra control. }
+\CommentTok{#Not included in essay.}
+\NormalTok{multiregression5 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(data}\OperatorTok{$}\NormalTok{cpi_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}
+\StringTok{                         }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{) }\OperatorTok{+}
+\StringTok{                         }\NormalTok{meanpartydivergence_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+\NormalTok{multiregression6 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(data}\OperatorTok{$}\NormalTok{unemployment_}\DecValTok{1981}\NormalTok{_}\DecValTok{2009} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}
+\StringTok{                         }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{) }\OperatorTok{+}\StringTok{ }\NormalTok{meanpartydivergence_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+
+\CommentTok{#Produce a table for these two regressions. Not included in the essay}
+\KeywordTok{stargazer}\NormalTok{(multiregression5, multiregression6,}
+          \DataTypeTok{title=}\StringTok{"Table 3: Considering Party Divergence"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Updated Executive-Parties Dimension (1981-2010)"}\NormalTok{,}
+                               \StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 ((1000s,) logged)"}\NormalTok{,}
+                               \StringTok{"Mean Party Divergence (1980-2010)"}\NormalTok{),}
+          \DataTypeTok{column.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"CPI (1981-2009)"}\NormalTok{, }\StringTok{"Unemployment (1981-2009)"}\NormalTok{), }
+          \DataTypeTok{model.numbers =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{dep.var.labels.include =} \OtherTok{FALSE}\NormalTok{,}
+          \DataTypeTok{out=}\StringTok{"regressiontable6.html"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+I then performed regressions on a variety of economic indicators
+relevant to the theoretical argument - inflation volatility, investment,
+and R\&D spending.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Research and Development Spending as a % of GDP}
+\CommentTok{#Source: World Bank [https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS]}
+\NormalTok{mean_research_spending_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.44777}\NormalTok{, }\FloatTok{1.91622}\NormalTok{, }\FloatTok{2.1427}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{,}
+                                                  \FloatTok{1.87435}\NormalTok{, }\FloatTok{0.53286}\NormalTok{, }\FloatTok{1.86676}\NormalTok{, }\FloatTok{0.38073}\NormalTok{,}
+                                                  \FloatTok{2.3988}\NormalTok{, }\FloatTok{3.21814}\NormalTok{, }\FloatTok{2.1181}\NormalTok{, }\FloatTok{2.41962}\NormalTok{,}
+                                                  \FloatTok{0.56665}\NormalTok{, }\FloatTok{2.51366}\NormalTok{, }\FloatTok{0.75914}\NormalTok{, }\FloatTok{1.23902}\NormalTok{,}
+                                                  \FloatTok{3.78194}\NormalTok{, }\FloatTok{1.07031}\NormalTok{, }\FloatTok{0.05503}\NormalTok{, }\FloatTok{3.04645}\NormalTok{,}
+                                                  \FloatTok{2.58704}\NormalTok{, }\FloatTok{1.60422}\NormalTok{, }\FloatTok{0.47602}\NormalTok{, }\FloatTok{0.32447}\NormalTok{,}
+                                                  \FloatTok{1.75547}\NormalTok{, }\FloatTok{1.58709}\NormalTok{, }\FloatTok{1.11415}\NormalTok{, }\FloatTok{0.89638}\NormalTok{,}
+                                                  \FloatTok{1.03846}\NormalTok{, }\FloatTok{4.33717}\NormalTok{, }\FloatTok{2.53986}\NormalTok{, }\FloatTok{0.09488}\NormalTok{,}
+                                                  \FloatTok{1.60445}\NormalTok{, }\FloatTok{0.30927}\NormalTok{, }\FloatTok{2.59394}\NormalTok{)}
+\CommentTok{#Mean Real Interest Rate}
+\CommentTok{#Source: World Bank [https://data.worldbank.org/indicator/FR.INR.RINR]}
+\NormalTok{mean_realir_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{5.73775}\NormalTok{, }\FloatTok{5.15559}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{2.87593}\NormalTok{, }\FloatTok{5.25683}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{3.74883}\NormalTok{,}
+                           \FloatTok{5.0055}\NormalTok{, }\FloatTok{6.76317}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{5.82981}\NormalTok{,}
+                           \FloatTok{6.18931}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{6.91291}\NormalTok{, }\FloatTok{5.63949}\NormalTok{, }\FloatTok{6.38277}\NormalTok{, }\FloatTok{3.75266}\NormalTok{,}
+                           \FloatTok{5.23501}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{3.78474}\NormalTok{, }\FloatTok{8.73435}\NormalTok{, }\FloatTok{1.31556}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{5.04796}\NormalTok{,}
+                           \OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{5.67907}\NormalTok{, }\FloatTok{2.02603}\NormalTok{, }\FloatTok{8.04526}\NormalTok{, }\FloatTok{3.12076}\NormalTok{, }\FloatTok{27.11934}\NormalTok{, }\FloatTok{5.26575}\NormalTok{)}
+\CommentTok{#Investment [Gross Capital Formation] as % of gdp}
+\CommentTok{#Source: World Bank [https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS]}
+\NormalTok{investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{18.34842}\NormalTok{, }\FloatTok{26.57779}\NormalTok{, }\FloatTok{25.13376}\NormalTok{, }\FloatTok{25.7561}\NormalTok{, }
+                                      \FloatTok{16.91716}\NormalTok{, }\FloatTok{22.2687}\NormalTok{, }\FloatTok{30.49037}\NormalTok{, }\FloatTok{21.4423}\NormalTok{,}
+                                      \FloatTok{22.34538}\NormalTok{, }\FloatTok{20.88851}\NormalTok{, }\FloatTok{24.62634}\NormalTok{, }\FloatTok{22.14893}\NormalTok{,}
+                                      \FloatTok{22.96917}\NormalTok{, }\FloatTok{25.55618}\NormalTok{, }\FloatTok{23.40727}\NormalTok{, }\FloatTok{28.21113}\NormalTok{,}
+                                      \FloatTok{22.47671}\NormalTok{, }\FloatTok{22.06105}\NormalTok{, }\FloatTok{21.57884}\NormalTok{, }\FloatTok{23.91849}\NormalTok{,}
+                                      \FloatTok{28.7914}\NormalTok{, }\FloatTok{34.02656}\NormalTok{, }\FloatTok{21.56247}\NormalTok{, }\FloatTok{24.32699}\NormalTok{,}
+                                      \FloatTok{25.2084}\NormalTok{, }\FloatTok{22.04612}\NormalTok{, }\FloatTok{25.2008}\NormalTok{, }\FloatTok{23.10037}\NormalTok{, }
+                                      \FloatTok{26.09765}\NormalTok{, }\FloatTok{24.72911}\NormalTok{, }\FloatTok{23.96684}\NormalTok{, }\FloatTok{26.67047}\NormalTok{, }\OtherTok{NA}\NormalTok{, }
+                                      \FloatTok{19.50643}\NormalTok{, }\FloatTok{16.00303}\NormalTok{, }\FloatTok{22.19966}\NormalTok{)}
+\CommentTok{#Mean Inflation Volatility }
+\CommentTok{#Source: Appendix B}
+\NormalTok{cpi_volatility_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\FloatTok{0.46695}\NormalTok{, }\FloatTok{0.45838}\NormalTok{, }\FloatTok{0.45936}\NormalTok{, }\FloatTok{0.87289}\NormalTok{, }\FloatTok{0.3917}\NormalTok{,}
+                              \FloatTok{0.67234}\NormalTok{, }\FloatTok{0.45604}\NormalTok{, }\FloatTok{1.02759}\NormalTok{, }\FloatTok{0.43351}\NormalTok{, }\FloatTok{0.45318}\NormalTok{, }\FloatTok{0.34204}\NormalTok{,}
+                              \FloatTok{0.38846}\NormalTok{, }\FloatTok{1.01622}\NormalTok{, }\FloatTok{0.90186}\NormalTok{, }\FloatTok{0.96441}\NormalTok{, }\FloatTok{0.59202}\NormalTok{, }\FloatTok{1.1558}\NormalTok{, }
+                              \FloatTok{0.35332}\NormalTok{, }\FloatTok{1.26056}\NormalTok{, }\FloatTok{0.4725}\NormalTok{, }\FloatTok{0.71989}\NormalTok{, }\FloatTok{0.42493}\NormalTok{,}
+                              \FloatTok{0.70044}\NormalTok{, }\FloatTok{0.9075}\NormalTok{, }\FloatTok{0.39054}\NormalTok{, }\FloatTok{0.51668}\NormalTok{, }\FloatTok{0.56954}\NormalTok{,}
+                              \FloatTok{0.68027}\NormalTok{, }\FloatTok{0.55606}\NormalTok{, }\FloatTok{0.58243}\NormalTok{,}
+                              \FloatTok{0.46025}\NormalTok{, }\FloatTok{0.7629}\NormalTok{, }\FloatTok{0.53995}\NormalTok{, }\FloatTok{1.30292}\NormalTok{, }\FloatTok{0.43073}\NormalTok{)}
+\CommentTok{#Trade (% GDP)}
+\CommentTok{#Source: World Bank [https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS]}
+\NormalTok{trade_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{23.81338}\NormalTok{, }\FloatTok{36.60527}\NormalTok{, }\FloatTok{77.00931}\NormalTok{, }\FloatTok{98.22535}\NormalTok{, }\FloatTok{99.21468}\NormalTok{,}
+                                 \FloatTok{126.9815}\NormalTok{, }\FloatTok{101.49023}\NormalTok{, }\FloatTok{62.22604}\NormalTok{, }\FloatTok{78.83972}\NormalTok{,}
+                                 \FloatTok{75.99064}\NormalTok{, }\FloatTok{63.38736}\NormalTok{, }\FloatTok{47.77438}\NormalTok{, }\FloatTok{54.1415}\NormalTok{, }\FloatTok{45.15598}\NormalTok{,}
+                                 \FloatTok{71.49991}\NormalTok{, }\FloatTok{25.07988}\NormalTok{, }\FloatTok{132.40828}\NormalTok{, }\FloatTok{69.75524}\NormalTok{, }\FloatTok{43.82693}\NormalTok{,}
+                                 \FloatTok{96.00476}\NormalTok{, }\FloatTok{22.34597}\NormalTok{, }\FloatTok{63.84618}\NormalTok{, }\FloatTok{226.05526}\NormalTok{, }\FloatTok{200.71947}\NormalTok{,}
+                                 \FloatTok{199.02762}\NormalTok{, }\FloatTok{111.54283}\NormalTok{, }\FloatTok{71.44611}\NormalTok{, }\FloatTok{58.13953}\NormalTok{,}
+                                 \FloatTok{61.83021}\NormalTok{, }\FloatTok{45.55861}\NormalTok{, }\FloatTok{69.6311}\NormalTok{, }\FloatTok{91.9803}\NormalTok{,}
+                                 \OtherTok{NA}\NormalTok{, }\FloatTok{51.04469}\NormalTok{, }\FloatTok{44.35633}\NormalTok{, }\FloatTok{21.81968}\NormalTok{)}
+
+\CommentTok{#First Analysis; inflation volatility}
+\KeywordTok{boxplot}\NormalTok{(cpi_volatility_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{) }\CommentTok{#No outliers}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Without controlling for economic openness}
+\NormalTok{multiregression7 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(cpi_volatility_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}
+\StringTok{                         }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+\CommentTok{#Controlling for economic openness}
+\NormalTok{multiregression8 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(cpi_volatility_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}\StringTok{ }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}
+\StringTok{                         }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{) }\OperatorTok{+}\StringTok{ }\NormalTok{trade_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+
+\CommentTok{#Producing the regression table for the essay.}
+\KeywordTok{stargazer}\NormalTok{(multiregression7, multiregression8, }\DataTypeTok{title=}\StringTok{"Inflation Volatility"}\NormalTok{,}
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Updated Executive-Parties Dimension"}\NormalTok{, }\StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 1000s)"}\NormalTok{,}
+                               \StringTok{"Economic Openness (1980-2010)"}\NormalTok{), }
+          \DataTypeTok{dep.var.labels =} \StringTok{"CPI Inflation Volatility (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{,}
+          \DataTypeTok{out=}\StringTok{"regressiontable7.tex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Second Analysis: R&D as a % of GDP}
+\KeywordTok{boxplot}\NormalTok{(mean_research_spending_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{) }\CommentTok{#No outliers}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{multiregression9 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(mean_research_spending_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}\StringTok{ }
+\StringTok{                         }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+
+\CommentTok{#Third Analysis: Investment as % of GDP}
+\KeywordTok{boxplot}\NormalTok{(investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, }\DataTypeTok{main =} \StringTok{"Figure 4: Investment Outliers"}\NormalTok{, }
+        \DataTypeTok{xlab =} \StringTok{"Gross Capital Formation 1980-2010 (% of GDP"}\NormalTok{, }\DataTypeTok{horizontal =} \OtherTok{TRUE}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Quartiles?}
+\KeywordTok{quantile}\NormalTok{(investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\CommentTok{#IQR = 3.2871}
+\CommentTok{#Lower Outlier Bound - 17.06052}
+\CommentTok{#Higher Outlier Bound - 30.37535}
+
+\CommentTok{#Plot to identify the outliers}
+\KeywordTok{plot}\NormalTok{(investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{type=}\StringTok{"n"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{labels=}\NormalTok{data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{cex=}\FloatTok{0.7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Outliers are Botswana, Korea, Uruguay, Barbados}
+\CommentTok{#Clean up the outliers}
+\NormalTok{investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{[}\DecValTok{5}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Barbados}
+\NormalTok{investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{[}\DecValTok{7}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Botswana}
+\NormalTok{investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{[}\DecValTok{22}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Korea}
+\NormalTok{investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{[}\DecValTok{35}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Uruguay}
+
+\CommentTok{#Run first regression}
+\NormalTok{multiregression10 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}\StringTok{ }
+\StringTok{                          }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{))}
+\CommentTok{#Controlling for real IR}
+\NormalTok{multiregression11 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010} \OperatorTok{~}\StringTok{ }\NormalTok{newepdimension }\OperatorTok{+}\StringTok{ }
+\StringTok{                        }\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{) }\OperatorTok{+}
+\StringTok{                          }\NormalTok{mean_realir_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Producing Stargazer tables for R&D and Investment}
+\KeywordTok{stargazer}\NormalTok{(multiregression9, }\DataTypeTok{title=}\StringTok{"R&D Spending (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Updated Executive-Parties Dimension"}\NormalTok{, }
+                               \StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 1000s)"}\NormalTok{), }
+          \DataTypeTok{dep.var.labels =} \StringTok{"Research and Development Spending as % of GDP (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{,}
+          \DataTypeTok{out =} \StringTok{"regressiontable8.tex"}\NormalTok{)}
+
+\KeywordTok{stargazer}\NormalTok{(multiregression10, multiregression11,}
+          \DataTypeTok{title=}\StringTok{"Gross Capital Formation (1980-2010)"}\NormalTok{,}
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Updated Executive-Parties Dimension"}\NormalTok{, }\StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 100s)"}\NormalTok{, }
+                               \StringTok{"Mean Real Interest Rate (1980-2010)"}\NormalTok{),}
+          \DataTypeTok{dep.var.labels =} \StringTok{"Investment as % of GDP (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{,}
+          \DataTypeTok{out=}\StringTok{"regressiontable9.tex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Checking R&D measures of central tendency and dispersion}
+\KeywordTok{mean}\NormalTok{(mean_research_spending_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{sd}\NormalTok{(mean_research_spending_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+I then expand the number of cases to reflect democracies which fulfill
+Lijphart's criteria as of 2019; 20 years of continous democracy judged
+by `Free' on Freedom House rankings and having a population of over
+250,000. Those are Belize, Bulgaria, Cape Verde, Chile, Cyprus, Estonia,
+Latvia, Lithuania, Mongolia, Namibia, Panama, Poland, Romania, Slovenia,
+South Africa, Taiwan, Vanuatu. First of all I formulated an
+executive-parties dimension for the countries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Data for all QoG data is:}
+\CommentTok{#[https://qog.pol.gu.se/data/datadownloads/qogstandarddata]}
+\CommentTok{#calculating effective number of parties}
+\NormalTok{qog_data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(cname) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(ccodealp }\OperatorTok{==}\StringTok{ "BLZ"}\OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "BGR"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "CPV"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "CHL"} \OperatorTok{|}
+\StringTok{           }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "CYP"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "EST"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "LVA"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "LTU"} \OperatorTok{|}\StringTok{ }
+\StringTok{           }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "MNG"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "NAM"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "PAN"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "POL"} \OperatorTok{|}
+\StringTok{           }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "ROU"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "SVN"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "ZAF"} \OperatorTok{|}\StringTok{ }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "TWN"} \OperatorTok{|}
+\StringTok{           }\NormalTok{ccodealp }\OperatorTok{==}\StringTok{ "VUT"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{gol_enep =}\NormalTok{ gol_enep[}\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(gol_enep))[}\DecValTok{1}\NormalTok{]])}
+
+\CommentTok{#SA; elections from 1994 onwards. Source: African Elections Database.}
+\CommentTok{#[http://africanelections.tripod.com/]}
+\NormalTok{south_africa_epp =}\StringTok{ }\KeywordTok{mean}\NormalTok{((}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.62}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.2039}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.104}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.022}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.07}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.015}\OperatorTok{^}\DecValTok{2}\NormalTok{)),}
+\NormalTok{                        (}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.66}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.096}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.086}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.069}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.034}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.14}\OperatorTok{^}\DecValTok{2}\NormalTok{)),}
+\NormalTok{                        (}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.69}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.124}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.0697}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.023}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.0173}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.0165}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\FloatTok{0.16}\OperatorTok{^}\DecValTok{2}\NormalTok{)),}
+\NormalTok{                        (}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.659}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.1666}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0742}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0455}\OperatorTok{^}\DecValTok{2}\NormalTok{)))}
+\CommentTok{#= 2.260397 = 2.26}
+
+\CommentTok{#Namibia: elections from 1994 onwards. Data from African Elections Database.}
+\NormalTok{namibia_epp =}\StringTok{ }\KeywordTok{mean}\NormalTok{((}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.739}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.28}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0272}\OperatorTok{^}\DecValTok{2}\NormalTok{)), (}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.7615}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0994}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0948}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.00293}\OperatorTok{^}\DecValTok{2}\NormalTok{)),}
+\NormalTok{                   (}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.7611}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0729}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0511}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0415}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.036}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0196}\OperatorTok{^}\DecValTok{2}\NormalTok{)),}
+\NormalTok{                   (}\DecValTok{1}\OperatorTok{/}\NormalTok{(}\FloatTok{0.7527}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.1131}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0317}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0305}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0243}\OperatorTok{^}\DecValTok{2}\FloatTok{+0.0135}\OperatorTok{^}\DecValTok{2}\NormalTok{)))}
+\CommentTok{#=1.599333 = 1.6}
+
+\NormalTok{mean_eff_parties_new_democracies <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{2.06}\NormalTok{, }\FloatTok{4.12}\NormalTok{, }\FloatTok{1.81}\NormalTok{, }\FloatTok{7.05}\NormalTok{, }\FloatTok{3.62}\NormalTok{, }\FloatTok{8.72}\NormalTok{, }\FloatTok{6.21}\NormalTok{, }\FloatTok{4.58}\NormalTok{,}
+                                      \FloatTok{2.71}\NormalTok{, }\FloatTok{1.6}\NormalTok{, }\FloatTok{4.71}\NormalTok{, }\FloatTok{13.9}\NormalTok{, }\FloatTok{2.21}\NormalTok{, }\FloatTok{8.34}\NormalTok{, }\FloatTok{2.26}\NormalTok{, }\FloatTok{3.14}\NormalTok{, }\FloatTok{2.56}\NormalTok{)}
+
+\CommentTok{#Data from Gallagher Electoral Disproportionality Data, 1945-2014, v2, Gandrud}
+\CommentTok{#[http://christophergandrud.github.io/Disproportionality_Data/]}
+\NormalTok{disproportionality_data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(country) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(iso2c }\OperatorTok{==}\StringTok{ "BZ"}\OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "BG"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "CV"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "CL"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "CY"} \OperatorTok{|}\StringTok{ }
+\StringTok{           }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "EE"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "LV"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "LT"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "MN"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "NA"} \OperatorTok{|}
+\StringTok{           }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "PA"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "PL"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "RO"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "SI"} \OperatorTok{|}\StringTok{ }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "ZA"} \OperatorTok{|}
+\StringTok{           }\NormalTok{iso2c }\OperatorTok{==}\StringTok{ "TW"} \OperatorTok{|}\StringTok{ }\NormalTok{country }\OperatorTok{==}\StringTok{ "Vanuatu"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{mean_disproportionality =}\NormalTok{ disproportionality[}\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(disproportionality))[}\DecValTok{1}\NormalTok{]])}
+
+\CommentTok{#No disproportionality data for Vanuatu from this dataset. Source - Wikipedia.}
+\CommentTok{#Calculating Vanuatu disproportionality from 1991-2012, without data for 2004. }
+\NormalTok{vanuatu_disproportionality =}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(}\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{((}\FloatTok{30.6}\DecValTok{-41}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{22.6-21.7}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{20.4}\DecValTok{-10}\OperatorTok{/}\DecValTok{46}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{15.4}\DecValTok{-4}\OperatorTok{/}\DecValTok{46}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{4.6}\DecValTok{-1}\OperatorTok{/}\DecValTok{46}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{2.9}\DecValTok{-1}\OperatorTok{/}\DecValTok{46}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{1.9}\DecValTok{-1}\OperatorTok{/}\DecValTok{46}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{)),}
+                                  \KeywordTok{sqrt}\NormalTok{(}\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{((}\FloatTok{31.4}\DecValTok{-20}\OperatorTok{/}\DecValTok{50}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{27.4}\DecValTok{-17}\OperatorTok{/}\DecValTok{50}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{23.4}\DecValTok{-9}\OperatorTok{/}\DecValTok{50}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{2.7}\DecValTok{-1}\OperatorTok{/}\DecValTok{50}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{2.3}\DecValTok{-0}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{1.8}\DecValTok{-1}\OperatorTok{/}\DecValTok{50}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{1.6}\DecValTok{-0}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{)), }
+                                  \KeywordTok{sqrt}\NormalTok{(}\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{((}\DecValTok{21} \OperatorTok{-}\StringTok{ }\DecValTok{18}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{20.1}\DecValTok{-12}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{15.9}\DecValTok{-11}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\DecValTok{14-6}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{7.6}\DecValTok{-1}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{2.2}\DecValTok{-2}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{1.1}\DecValTok{-0}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{)), }
+                                  \KeywordTok{sqrt}\NormalTok{(}\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{((}\DecValTok{17-14}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{15.1}\DecValTok{-15}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{13.6}\DecValTok{-8}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{7.1}\DecValTok{-3}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{6.2}\DecValTok{-3}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{5.1}\DecValTok{-1}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{4.7}\DecValTok{-2}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{), }
+                                  \KeywordTok{sqrt}\NormalTok{(}\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{((}\FloatTok{24.23}\DecValTok{-11}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{15.66}\DecValTok{-8}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{13.26}\DecValTok{-7}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{11.63} \DecValTok{-7}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{4.92}\DecValTok{-4}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{3.44} \OperatorTok{-}\StringTok{ }\DecValTok{2}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{3.44} \OperatorTok{-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{)), }
+                                  \KeywordTok{sqrt}\NormalTok{(}\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{((}\FloatTok{12.19}\DecValTok{-5}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{11.29}\DecValTok{-8}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\DecValTok{8} \OperatorTok{-}\StringTok{ }\DecValTok{6}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{6.2}\DecValTok{-4}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{(}\FloatTok{6.02}\DecValTok{-4}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}
+\StringTok{                                                }\NormalTok{(}\FloatTok{5.75}\DecValTok{-3}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }
+\StringTok{                                                }\NormalTok{(}\FloatTok{4.23} \OperatorTok{-}\StringTok{ }\DecValTok{3}\OperatorTok{/}\DecValTok{52}\NormalTok{)}\OperatorTok{^}\DecValTok{2}\NormalTok{))))}
+\CommentTok{#19.8}
+
+\NormalTok{mean_disproportionality_new_democracies <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{19.7}\NormalTok{, }\FloatTok{5.37}\NormalTok{, }\DecValTok{7}\NormalTok{, }\FloatTok{6.3}\NormalTok{, }\FloatTok{17.1}\NormalTok{, }\FloatTok{7.23}\NormalTok{, }\FloatTok{4.14}\NormalTok{,}
+                                             \FloatTok{9.61}\NormalTok{, }\FloatTok{27.4}\NormalTok{, }\FloatTok{0.93}\NormalTok{, }\FloatTok{7.87}\NormalTok{, }\FloatTok{3.62}\NormalTok{, }\FloatTok{0.9}\NormalTok{, }\FloatTok{2.94}\NormalTok{,}
+                                             \FloatTok{0.36}\NormalTok{, }\FloatTok{7.05}\NormalTok{, }\FloatTok{19.8}\NormalTok{)}
+
+
+\CommentTok{#Next variable is minimal winning cabinets. The code used is long; available on request.}
+\CommentTok{#I just use dplyr repeatedly to search QoG dataset.}
+
+\CommentTok{#No QoG data for Belize, Cape Verde, Chile, Mongolia, Namibia,}
+\CommentTok{#Panama, South Africa, Taiwan, Vanuatu.}
+\NormalTok{cabinet_new_democracy <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\FloatTok{30.36}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\DecValTok{100}\NormalTok{, }\FloatTok{44.23}\NormalTok{, }\DecValTok{18}\NormalTok{, }\FloatTok{36.54}\NormalTok{, }\OtherTok{NA}\NormalTok{,}
+                           \OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{40.74}\NormalTok{, }\FloatTok{39.29}\NormalTok{, }\DecValTok{34}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{)}
+
+\CommentTok{#Data from African Elections and Carribbean Elections and Wikipedia for the rest.}
+\NormalTok{cabinet_new_democracy <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{, }\FloatTok{30.36}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{100}\NormalTok{, }\FloatTok{44.23}\NormalTok{, }\DecValTok{18}\NormalTok{, }\FloatTok{36.54}\NormalTok{, }\DecValTok{83}\NormalTok{,}
+                           \DecValTok{100}\NormalTok{, }\DecValTok{20}\NormalTok{, }\FloatTok{40.74}\NormalTok{, }\FloatTok{39.29}\NormalTok{, }\DecValTok{34}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{86}\NormalTok{, }\DecValTok{29}\NormalTok{)}
+
+\CommentTok{#Finally, we find the executive dominance measure. }
+\CommentTok{#Source: PGDS, African Elections, Carribbean Elections, Wikipedia}
+\NormalTok{newdemocracy_dimension_data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Country) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(exec_dominance) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{mean =} \KeywordTok{mean}\NormalTok{(exec_dominance))}
+
+\NormalTok{dominance_new_democracy <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{4.71}\NormalTok{, }\FloatTok{2.25}\NormalTok{, }\FloatTok{2.67}\NormalTok{, }\FloatTok{4.06}\NormalTok{, }\FloatTok{2.58}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{3.47}\NormalTok{, }\DecValTok{3}\NormalTok{,}
+                             \FloatTok{3.44}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.57}\NormalTok{, }\FloatTok{3.71}\NormalTok{)}
+
+\CommentTok{#Now standardise the variables:}
+\NormalTok{standardised_newdem_epp <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(mean_eff_parties_new_democracies)}
+\NormalTok{standardised_newdem_disproportionality <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(}\OperatorTok{-}\NormalTok{mean_disproportionality_new_democracies)}
+\NormalTok{standardised_newdem_cabinet <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(}\OperatorTok{-}\NormalTok{cabinet_new_democracy)}
+\NormalTok{standardised_newdem_dominance <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(dominance_new_democracy)}
+\NormalTok{newdemocracy_ep_dimension <-}\StringTok{ }\NormalTok{((standardised_newdem_epp }\OperatorTok{+}\StringTok{ }
+\StringTok{                                 }\NormalTok{standardised_newdem_disproportionality }\OperatorTok{+}
+\StringTok{                                 }\NormalTok{standardised_newdem_cabinet }\OperatorTok{+}
+\StringTok{                                 }\NormalTok{standardised_newdem_dominance) }\OperatorTok{/}\StringTok{ }\DecValTok{4}\NormalTok{)}
+
+\CommentTok{#Checking the internal validity}
+\NormalTok{newdemocracy_ep_dataframe <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(standardised_newdem_epp, }
+\NormalTok{                                   standardised_newdem_disproportionality,}
+\NormalTok{                                   standardised_newdem_cabinet, }
+\NormalTok{                                   standardised_newdem_dominance)}
+
+\NormalTok{psych}\OperatorTok{::}\KeywordTok{alpha}\NormalTok{(newdemocracy_ep_dataframe)}
+\CommentTok{#Alpha = 0.76}
+\end{Highlighting}
+\end{Shaded}
+
+Having defined an executive-parties dimension for the new democracies, I
+then regress them against the economic indicators again.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Countries are: Belize, Bulgaria, Cape Verde, Chile, Cyprus, Estonia, Latvia, Lithuania,}
+\CommentTok{#Mongolia, Namibia, Panama, Poland, Romania, Slovenia, South Africa, Taiwan, Vanuatu}
+
+\CommentTok{#International Financial Statistics}
+\CommentTok{#[http://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42]}
+\NormalTok{cpi_volatility_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\FloatTok{2.26931}\NormalTok{, }\FloatTok{1.16605}\NormalTok{, }\FloatTok{0.82212}\NormalTok{, }\FloatTok{0.84151}\NormalTok{, }\FloatTok{1.34902}\NormalTok{,}
+                                     \FloatTok{1.65866}\NormalTok{, }\FloatTok{1.59255}\NormalTok{, }\FloatTok{2.03858}\NormalTok{, }\FloatTok{0.72881}\NormalTok{, }\FloatTok{0.44063}\NormalTok{, }\FloatTok{1.66167}\NormalTok{,}
+                                     \FloatTok{1.75869}\NormalTok{, }\FloatTok{1.78236}\NormalTok{, }\FloatTok{0.67919}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{0.82473}\NormalTok{)}
+\CommentTok{#World Bank Data - all same source as above.}
+\NormalTok{mean_realir_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{12.83}\NormalTok{, }\FloatTok{6.75}\NormalTok{, }\FloatTok{6.57}\NormalTok{, }\FloatTok{6.63}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{16.47}\NormalTok{, }\FloatTok{6.72}\NormalTok{,}
+                                  \FloatTok{7.47}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{0.08}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{4.35}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{8.2}\NormalTok{)}
+\CommentTok{#World Bank Data}
+\NormalTok{trade_percent_gdp_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{106.58}\NormalTok{, }\FloatTok{86.6}\NormalTok{, }\DecValTok{90}\NormalTok{, }\FloatTok{58.6}\NormalTok{, }\FloatTok{114.79}\NormalTok{, }\FloatTok{135.33}\NormalTok{, }\FloatTok{89.94}\NormalTok{, }
+                                        \FloatTok{101.97}\NormalTok{, }\FloatTok{103.73}\NormalTok{, }\FloatTok{98.94}\NormalTok{, }\FloatTok{129.29}\NormalTok{, }\FloatTok{64.85}\NormalTok{, }\FloatTok{56.73}\NormalTok{,}
+                                        \FloatTok{112.96}\NormalTok{, }\DecValTok{47}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{98.27}\NormalTok{)}
+\CommentTok{#World Bank Data}
+\NormalTok{investment_percent_gdp_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{22.6}\NormalTok{, }\FloatTok{25.41}\NormalTok{, }\FloatTok{47.44}\NormalTok{, }\FloatTok{22.51}\NormalTok{, }\FloatTok{25.82}\NormalTok{, }\FloatTok{30.18}\NormalTok{,}
+                                             \FloatTok{27.49}\NormalTok{, }\FloatTok{22.38}\NormalTok{, }\FloatTok{38.95}\NormalTok{, }\FloatTok{19.28}\NormalTok{, }\FloatTok{29.46}\NormalTok{, }\FloatTok{21.99}\NormalTok{,}
+                                             \FloatTok{25.06}\NormalTok{, }\FloatTok{25.84}\NormalTok{, }\FloatTok{20.46}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{25.39}\NormalTok{)}
+\CommentTok{#World Bank Data}
+\NormalTok{mean_research_spending_percent_gdp_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\FloatTok{0.47}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{0.34}\NormalTok{, }\FloatTok{0.33}\NormalTok{, }
+                                                         \FloatTok{0.94}\NormalTok{, }\FloatTok{0.46}\NormalTok{, }\FloatTok{0.68}\NormalTok{, }\FloatTok{0.23}\NormalTok{,}
+                                                         \FloatTok{0.14}\NormalTok{, }\FloatTok{0.26}\NormalTok{, }\FloatTok{0.61}\NormalTok{, }\FloatTok{0.36}\NormalTok{, }\FloatTok{1.46}\NormalTok{,}
+                                                         \FloatTok{0.8}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{NA}\NormalTok{)}
+
+\CommentTok{#World Bank Data}
+\NormalTok{population_newdem_data <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"/Users/gussmith/Desktop/Notes/Politics/Political Analysis/Essay/Data/New Dem Data/Population.csv"}\NormalTok{)}
+
+\NormalTok{population_newdem_data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Country }\OperatorTok{==}\StringTok{ "Belize"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Bulgaria"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Cabo Verde"} \OperatorTok{|}\StringTok{ }
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Chile"} \OperatorTok{|}\StringTok{  }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Cyprus"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Estonia"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Latvia"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Lithuania"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Mongolia"} \OperatorTok{|}\StringTok{ }
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Namibia"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Panama"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Poland"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Romania"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Slovenia"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "South Africa"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Taiwan"} \OperatorTok{|}\StringTok{  }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Vanuatu"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{pop_in_thousands =}\NormalTok{ Population}\OperatorTok{/}\DecValTok{1000}\NormalTok{)}
+
+\NormalTok{pop_newdem_thousands_}\DecValTok{2009}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{315}\NormalTok{, }\DecValTok{7444}\NormalTok{, }\DecValTok{487}\NormalTok{, }\DecValTok{16886}\NormalTok{, }\DecValTok{1098}\NormalTok{, }\DecValTok{1335}\NormalTok{, }\DecValTok{2142}\NormalTok{, }\DecValTok{3163}\NormalTok{, }\DecValTok{2674}\NormalTok{, }\DecValTok{2081}\NormalTok{,}
+                               \DecValTok{3579}\NormalTok{, }\DecValTok{38152}\NormalTok{, }\DecValTok{20367}\NormalTok{, }\DecValTok{2040}\NormalTok{, }\DecValTok{50477}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\DecValTok{236}\NormalTok{)}
+\CommentTok{#Vanuatu pop is >250k now, but measuring as of 2009 since that is }
+\CommentTok{#limit of economic variables and same as Lijphart.}
+
+\CommentTok{#From the United Nations Human Development Reports}
+\CommentTok{#[http://hdr.undp.org/en/data]}
+\NormalTok{hdi_newdem_data <-}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(}\StringTok{"/Users/gussmith/Desktop/Notes/Politics/Political Analysis/Essay/Data/New Dem Data/HDI 2010.xlsx"}\NormalTok{)}
+
+\NormalTok{hdi_newdem_data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Country) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Country }\OperatorTok{==}\StringTok{ "Belize"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Bulgaria"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Cabo Verde"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Chile"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Cyprus"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Estonia"} \OperatorTok{|}\StringTok{ }
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Latvia"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Lithuania"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Mongolia"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Namibia"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Panama"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Poland"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Romania"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Slovenia"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "South Africa"} \OperatorTok{|}
+\StringTok{           }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Taiwan"} \OperatorTok{|}\StringTok{ }\NormalTok{Country }\OperatorTok{==}\StringTok{ "Vanuatu"}\NormalTok{)}
+
+\NormalTok{hdi_newdem_}\DecValTok{2010}\NormalTok{ <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.693}\NormalTok{, }\FloatTok{0.779}\NormalTok{, }\FloatTok{0.626}\NormalTok{, }\FloatTok{0.8}\NormalTok{, }\FloatTok{0.85}\NormalTok{, }\FloatTok{0.844}\NormalTok{, }\FloatTok{0.817}\NormalTok{, }\FloatTok{0.824}\NormalTok{, }\FloatTok{0.697}\NormalTok{, }\FloatTok{0.588}\NormalTok{,}
+                     \FloatTok{0.758}\NormalTok{, }\FloatTok{0.835}\NormalTok{, }\FloatTok{0.797}\NormalTok{, }\FloatTok{0.881}\NormalTok{, }\FloatTok{0.662}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\FloatTok{0.585}\NormalTok{)}
+
+\CommentTok{#Combining to get a full data frame of 53 democracies}
+\NormalTok{newdemcountrylist =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Belize"}\NormalTok{, }\StringTok{"Bulgaria"}\NormalTok{, }\StringTok{"Cape Verde"}\NormalTok{, }\StringTok{"Chile"}\NormalTok{, }\StringTok{"Cyprus"}\NormalTok{, }
+                      \StringTok{"Estonia"}\NormalTok{,  }\StringTok{"Latvia"}\NormalTok{,  }\StringTok{"Lithuania"}\NormalTok{, }\StringTok{"Mongolia"}\NormalTok{, }\StringTok{"Namibia"}\NormalTok{,}
+                      \StringTok{"Panama"}\NormalTok{, }\StringTok{"Poland"}\NormalTok{, }\StringTok{"Romania"}\NormalTok{, }\StringTok{"Slovenia"}\NormalTok{,}
+                      \StringTok{"South Africa"}\NormalTok{, }\StringTok{"Taiwan"}\NormalTok{, }\StringTok{"Vanuatu"}\NormalTok{)}
+
+\NormalTok{total_}\DecValTok{36}\NormalTok{_data <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{country =}\NormalTok{ data}\OperatorTok{$}\NormalTok{country, }\DataTypeTok{epdimension=}\NormalTok{newepdimension,}
+                            \DataTypeTok{pop_2009=}\NormalTok{data}\OperatorTok{$}\NormalTok{pop_in_thousands_}\DecValTok{2009}\NormalTok{, }
+                            \DataTypeTok{hdi_2010=}\NormalTok{data}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010}\NormalTok{,}
+                            \DataTypeTok{investment_mean=}\NormalTok{investment_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                            \DataTypeTok{realir_mean=}\NormalTok{mean_realir_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                            \DataTypeTok{rand_mean=}\NormalTok{mean_research_spending_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                            \DataTypeTok{cpi_mean=}\NormalTok{cpi_volatility_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                            \DataTypeTok{trade_mean=}\NormalTok{trade_percent_gdp_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+
+\NormalTok{total_new_data <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{country =}\NormalTok{ newdemcountrylist, }
+                             \DataTypeTok{epdimension=}\NormalTok{newdemocracy_ep_dimension,}
+                             \DataTypeTok{pop_2009=}\NormalTok{pop_newdem_thousands_}\DecValTok{2009}\NormalTok{,}
+                             \DataTypeTok{hdi_2010=}\NormalTok{hdi_newdem_}\DecValTok{2010}\NormalTok{,}
+                             \DataTypeTok{investment_mean=}\NormalTok{investment_percent_gdp_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                             \DataTypeTok{realir_mean=}\NormalTok{mean_realir_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                             \DataTypeTok{rand_mean=}\NormalTok{mean_research_spending_percent_gdp_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{, }
+                             \DataTypeTok{cpi_mean=}\NormalTok{cpi_volatility_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{,}
+                             \DataTypeTok{trade_mean=}\NormalTok{trade_percent_gdp_newdem_}\DecValTok{1980}\NormalTok{_}\DecValTok{2010}\NormalTok{)}
+
+\NormalTok{combined_dataset <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(total_}\DecValTok{36}\NormalTok{_data, total_new_data)}
+
+\CommentTok{#Now, before running regressions, I return the values previously removed as outliers.}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{5}\NormalTok{] <-}\StringTok{ }\FloatTok{16.91716}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{7}\NormalTok{] <-}\StringTok{ }\FloatTok{30.49037}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{22}\NormalTok{] <-}\StringTok{ }\FloatTok{34.02656}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{35}\NormalTok{] <-}\StringTok{ }\FloatTok{16.00303}
+
+\CommentTok{#Investment}
+\KeywordTok{boxplot}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{investment_mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{quantile}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{investment_mean, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\FloatTok{22.10499} \OperatorTok{-}\StringTok{ }\FloatTok{1.5} \OperatorTok{*}\StringTok{ }\NormalTok{(}\FloatTok{25.83-22.10499}\NormalTok{) }\CommentTok{#16.5}
+\CommentTok{#So, outliers are 22, 35, 39, 45}
+\CommentTok{#Exclude the outliers:}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{22}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#KOREA}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{35}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#URUGUAY}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{39}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#CAPE VERDE}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{investment_mean[}\DecValTok{45}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#MONGOLIA}
+
+\CommentTok{#Run the regression}
+\NormalTok{multiregression21 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{investment_mean }\OperatorTok{~}\StringTok{ }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{epdimension }\OperatorTok{+}
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{pop_}\DecValTok{2009}\NormalTok{))}
+\NormalTok{multiregression22 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{investment_mean }\OperatorTok{~}\StringTok{ }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{epdimension }\OperatorTok{+}
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{pop_}\DecValTok{2009}\NormalTok{) }\OperatorTok{+}
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{realir_mean)}
+\CommentTok{#R&D}
+\KeywordTok{boxplot}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{rand_mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Run the regression}
+\NormalTok{multiregression23 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{rand_mean }\OperatorTok{~}\StringTok{ }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{epdimension }\OperatorTok{+}\StringTok{ }
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{pop_}\DecValTok{2009}\NormalTok{))}
+
+\CommentTok{#Inflation Volatility}
+\KeywordTok{boxplot}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{cpi_mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{cpi_mean}
+\CommentTok{#Outliers are 38 Bulgaria, 45 Mongolia}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{cpi_mean[}\DecValTok{38}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Bulgaria}
+\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{cpi_mean[}\DecValTok{45}\NormalTok{] <-}\StringTok{ }\OtherTok{NA} \CommentTok{#Mongolia}
+
+\CommentTok{#Run the regression}
+\NormalTok{multiregression24 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{cpi_mean }\OperatorTok{~}\StringTok{ }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{epdimension }\OperatorTok{+}\StringTok{ }
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{pop_}\DecValTok{2009}\NormalTok{))}
+\NormalTok{multiregression25 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{cpi_mean }\OperatorTok{~}\StringTok{ }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{epdimension }\OperatorTok{+}
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{hdi_}\DecValTok{2010} \OperatorTok{+}\StringTok{ }\KeywordTok{log}\NormalTok{(combined_dataset}\OperatorTok{$}\NormalTok{pop_}\DecValTok{2009}\NormalTok{) }\OperatorTok{+}
+\StringTok{                          }\NormalTok{combined_dataset}\OperatorTok{$}\NormalTok{trade_mean)}
+\CommentTok{#Investment}
+\KeywordTok{stargazer}\NormalTok{(multiregression21, multiregression22, }
+          \DataTypeTok{title=}\StringTok{"Fifty-Three Democracies' Gross Capital Formation"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Executive-Parties Dimension"}\NormalTok{, }\StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 100s)"}\NormalTok{, }
+                               \StringTok{"Mean Real Interest Rate (1980-2010)"}\NormalTok{), }
+          \DataTypeTok{dep.var.labels =} \StringTok{"Investment as % of GDP (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{,}
+          \DataTypeTok{out=}\StringTok{"regressiontablenew1.tex"}\NormalTok{)}
+\CommentTok{#R&D}
+\KeywordTok{stargazer}\NormalTok{(multiregression23, }\DataTypeTok{title=}\StringTok{"Fifty-Three Democracies' R&D Spending"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Executive-Parties Dimension"}\NormalTok{, }\StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 1000s)"}\NormalTok{), }
+          \DataTypeTok{dep.var.labels =} \StringTok{"Research and Development Spending as % of GDP (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{,}
+          \DataTypeTok{out =} \StringTok{"regressiontablenew2.tex"}\NormalTok{)}
+\CommentTok{#Inflation Volatility}
+\KeywordTok{stargazer}\NormalTok{(multiregression24, multiregression25, }
+          \DataTypeTok{title=}\StringTok{"Fifty-Three Democracies' Inflation Volatility"}\NormalTok{, }
+          \DataTypeTok{covariate.labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"Executive-Parties Dimension"}\NormalTok{, }\StringTok{"HDI 2010"}\NormalTok{, }
+                               \StringTok{"Population 2009 (logged, 1000s)"}\NormalTok{, }
+                               \StringTok{"Economic Openness (1980-2010)"}\NormalTok{), }
+          \DataTypeTok{dep.var.labels =} \StringTok{"CPI Inflation Volatility (1980-2010)"}\NormalTok{, }
+          \DataTypeTok{font.size =} \StringTok{"small"}\NormalTok{,}
+          \DataTypeTok{omit.stat =} \KeywordTok{c}\NormalTok{(}\StringTok{"f"}\NormalTok{, }\StringTok{"ser"}\NormalTok{),}
+          \DataTypeTok{column.sep.width =} \StringTok{"-15pt"}\NormalTok{,}
+          \DataTypeTok{out =} \StringTok{"regressiontablenew3.tex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Finally I plotted the
+correlation between Lijphart's exec-parties dimension and mine using ggplot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataupdated <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(data, newepdimension)}
+\CommentTok{#Figure is plotting old E-P dimension against new EP dimension}
+\CommentTok{#ggplot(data=dataupdated, aes(x=exec_parties_1981_2010, y=newepdimension)) +}
+\CommentTok{#  geom_smooth(method="lm", colour="red") +}
+\CommentTok{#  labs(title="Figure 1: Executive-Parties Dimension Correlation", }
+\CommentTok{# subtitle="Excluding Pluralism and new Executive Dominance Measure",}
+\CommentTok{# x="Lijphart's Executive-Parties Dimension (1981-2010)", }
+\CommentTok{# y="Refined Executive-Parties Dimension (1981-2010)") +}
+\CommentTok{#  geom_text(aes(label=country), size=3, colour="black", }
+\CommentTok{# check_overlap = TRUE, family="Times New Roman") +}
+\CommentTok{#  theme_minimal()}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}  
+
